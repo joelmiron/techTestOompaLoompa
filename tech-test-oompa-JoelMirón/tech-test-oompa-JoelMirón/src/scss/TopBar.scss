@@ -1,0 +1,77 @@
+.topBar {
+  background-color: #d8d8d8;
+}
+
+.titleContainer {
+  display: flex;
+  align-items: center;
+  padding: 10px 0px 10px $space;
+}
+
+.loompaImg {
+  width: 35px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.searchContainer {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.searchBar {
+  padding: 20px 0 0 0;
+}
+
+.searchBar input {
+  all: unset;
+  padding: 5px 30px 5px 8px;
+  border: 1px solid #d8d8d8;
+  text-align: left;
+  border-radius: 4px;
+  max-width: $space;
+}
+.inputContainer {
+  position: relative;
+}
+
+.searchImg {
+  width: 18px;
+  position: absolute;
+  right: 10px;
+  top: 7px;
+  padding-left: 5px;
+  border-left: 1px solid #d8d8d8;
+}
+
+@media (min-width: 1820px) {
+  $space: 200px;
+  .titleContainer {
+    padding: 10px 0px 10px $space;
+  }
+
+  .searchBar input {
+    max-width: $space;
+  }
+}
+
+@media (max-width: 1300px) {
+  $space: 100px;
+
+  .titleContainer {
+    padding: 10px 0px 10px $space;
+  }
+
+  .searchBar input {
+    max-width: $space;
+  }
+}
+
+@media (max-width: 800px) {
+  $space: 20px;
+
+  .titleContainer {
+    padding: 10px 0px 10px $space;
+  }
+}

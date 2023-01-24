@@ -1,0 +1,68 @@
+.detail {
+  padding: 80px $space;
+}
+
+.detailContainer {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  display: flex;
+  line-height: 1.4;
+}
+
+.oompaImage {
+  flex: 0 60%;
+  img {
+    width: 100%;
+  }
+}
+.oompaDetail {
+  text-align: left;
+  flex: 0 40%;
+  padding-left: 15px;
+}
+
+.infoSpace {
+  margin-bottom: 20px;
+}
+
+@media (min-width: 1820px) {
+  $space: 200px;
+  .detail {
+    padding: 80px $space;
+  }
+}
+
+@media (max-width: 1100px) {
+  $space: 100px;
+
+  .detail {
+    padding: 80px $space;
+  }
+
+  .detailContainer {
+    max-width: 850px;
+  }
+}
+
+@media (max-width: 800px) {
+  $space: 80px;
+
+  .detail {
+    padding: 80px $space;
+  }
+  .detailContainer {
+    flex-direction: column;
+  }
+  .oompaDetail {
+    padding-left: unset;
+  }
+}
+
+@media (max-width: 500px) {
+  $space: 20px;
+
+  .detail {
+    padding: 80px $space;
+  }
+}
