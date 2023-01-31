@@ -7,7 +7,7 @@ export const useGetOompas = (type, api, hasMore, page) => {
   const actualDateStorage = JSON.parse(window.localStorage.getItem(type + "actualDate"));
   const refreshingDateStorage = JSON.parse(window.localStorage.getItem(type + "clearDate"));
   const [oompas, setOompas] = useState(type === "all" ? JSON.parse(window.localStorage.getItem("allstoragedOompaLoompas")) || [] :
-    JSON.parse(window.localStorage.getItem(type + "storagedOompaLoompa")) || []);
+                              JSON.parse(window.localStorage.getItem(type + "storagedOompaLoompa")) || []);
   const [oompasToFilter, setOompasToFilter] = useState(JSON.parse(window.localStorage.getItem("allstoragedOompaLoompas")) || []);
   let actualPage = JSON.parse(window.localStorage.getItem("actualPage")) ? JSON.parse(window.localStorage.getItem("actualPage")) : 1;
   const [idPage, setIdPage] = useState(JSON.parse(window.localStorage.getItem("actualPage")) ? JSON.parse(window.localStorage.getItem("actualPage")) : 1)
@@ -17,7 +17,7 @@ export const useGetOompas = (type, api, hasMore, page) => {
 
 
   useEffect(() => {
-    getOneOmpa();
+    getSingleOompa();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [type]);
 
@@ -61,7 +61,7 @@ export const useGetOompas = (type, api, hasMore, page) => {
   }
 
 
-  const getOneOmpa = async () => {
+  const getSingleOompa = async () => {
 
     if ((oompas.length === 0 || moment(actualDateStorage).isAfter(refreshingDateStorage)) && type !== "all") {
       let customApi = api + type

@@ -9,7 +9,6 @@ const OompaLoompaMain = ({
   profession,
 }) => {
   const history = useHistory();
-
   const loompaDetails = (oompaLoompa) => {
     history.push("/" + oompaLoompa);
   };
