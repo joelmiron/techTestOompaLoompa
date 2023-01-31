@@ -11,7 +11,6 @@ let customApi = ""
   const [hasMorePages, setHasMorePages] = useState(hasMore)
   let{actualDateStorage,refreshingDateStorage,nextPage,actualDate,clearDate} = getStoragedContent()
 
-
   useEffect(() => {
     getSingleOompa();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -22,7 +21,6 @@ let customApi = ""
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page])
 
-
   if (moment(actualDateStorage).isAfter(refreshingDateStorage)) {
     removeDates(type)
     removeLocalStorageItems(type)
@@ -30,7 +28,6 @@ let customApi = ""
     setOompas([]);
     setOompasToFilter([]);
   }
-
 
   const getOompas = async () => {
      customApi = api + nextPage
