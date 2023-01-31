@@ -13,22 +13,12 @@ const MainView = () => {
   const api = API + "?page=";
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
-  const [oompas, setOompas, oompasToFilter] = useGetOompas(
-    type,
-    api,
-    hasMore,
-    page
-  );
+  const [oompas, setOompas, oompasToFilter] = useGetOompas(type,api,hasMore,page);
   const elementRef = useRef();
 
   return (
     <div className="MainContainer">
-      <SearchBar
-        setOompas={setOompas}
-        oompas={oompas}
-        setHasMore={setHasMore}
-        oompasToFilter={oompasToFilter}
-      />
+      <SearchBar setOompas={setOompas} oompas={oompas}  setHasMore={setHasMore} oompasToFilter={oompasToFilter} />
 
       <div className="titleMain">
         <div className="title">Find your Oompa Loompa </div>
