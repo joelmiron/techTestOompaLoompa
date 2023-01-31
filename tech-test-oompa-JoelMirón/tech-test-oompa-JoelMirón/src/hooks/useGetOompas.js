@@ -3,7 +3,7 @@ import { useState,useEffect} from "react";
 const moment = require("moment");
 
 export const useGetOompas = (type, api, hasMore, page) => {
-let customApi = ""
+  let customApi = ""
   const [oompas, setOompas] = useState(type === "all" ? JSON.parse( localStorage.getItem("allstoragedOompaLoompas")) || [] :
                               JSON.parse( localStorage.getItem(type + "storagedOompaLoompa")) || []);
   const [oompasToFilter, setOompasToFilter] = useState(JSON.parse( localStorage.getItem("allstoragedOompaLoompas")) || []);
