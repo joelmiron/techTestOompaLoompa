@@ -4,27 +4,17 @@ import { useGetOompas } from "hooks/useGetOompas";
 //import { useNextPage } from "hooks/useNextPage";
 import React, { useRef, useState } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
+import { API } from "api";
 const OompaLoompaMain = React.lazy(() =>import("./components/OompaLoompaMain"));
 
 const MainView = () => {
   const type = "all";
   
-  const api = "https://2q2woep105.execute-api.eu-west-1.amazonaws.com/napptilus/oompa-loompas?page=";
+  const api = API+"?page=";
   const [page, setPage] = useState(1);
   const [hasMore,setHasMore] = useState(true)
-  const [oompas, setOompas,oompasToFilter] = useGetOompas(page, type, api,hasMore);
+  const [oompas, setOompas,oompasToFilter] = useGetOompas(type, api,hasMore,page);
   const elementRef = useRef();
-  //custom hook to use Intersection Observer when user scroll to bottom of the page
-  //const isNextPage = useNextPage(elementRef);
-
-  // useEffect(() => {
-  //   if (isNextPage) {
-  //     setPage((prevPage) => prevPage + 1);
-  //   
-  //   }
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, [isNextPage]);
-
 
 
   return (

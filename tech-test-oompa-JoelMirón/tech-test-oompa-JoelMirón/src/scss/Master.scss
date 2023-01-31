@@ -5,8 +5,8 @@ $space: 120px;
 
 
 
-@import "TopBar.scss";
-@import "MainPage.scss";
-@import "OompaDetail.scss";
+@import "../components/SearchBar/scss/TopBar.scss";
+@import "../components/MainView/scss/MainPage.scss";
+@import "../components/MainView/scss/OompaDetail.scss";
 
 
