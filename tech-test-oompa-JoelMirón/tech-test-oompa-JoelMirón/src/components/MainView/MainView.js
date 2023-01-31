@@ -1,7 +1,6 @@
 import SearchBar from "components/SearchBar/SearchBar";
 import { Suspense } from "react";
 import { useGetOompas } from "hooks/useGetOompas";
-//import { useNextPage } from "hooks/useNextPage";
 import React, { useRef, useState } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { API } from "api";
@@ -22,7 +21,7 @@ const MainView = () => {
        <SearchBar setOompas={setOompas} oompas={oompas}  setHasMore={setHasMore} oompasToFilter={oompasToFilter}  />
 
       <div className="titleMain">
-        <div className="title">Find your Oompa Loompa</div>
+        <div className="title">Find your Oompa Loompa  </div>
         <div className="subTitle">There are more than 100k</div>
       </div>
       <InfiniteScroll dataLength={oompas.length}  hasMore={hasMore} next={() => setPage((prevPage) => prevPage + 1)}> 
@@ -32,7 +31,7 @@ const MainView = () => {
             oompas.map((oompa) => (
               <OompaLoompaMain
                 key={oompa.id}
-                id={oompa.id}
+                id={oompa.id   }
                 image={oompa.image}
                 firstName={oompa.first_name}
                 lastName={oompa.last_name}

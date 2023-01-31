@@ -1,9 +1,12 @@
-
-
-
-const BodyDetail = ({image, name,lastName, gender,profession, description}) =>{
-
-    return (
+const BodyDetail = ({
+  image,
+  name,
+  lastName,
+  gender,
+  profession,
+  description,
+}) => {
+  return (
     <div className="detail">
       <div className="detailContainer">
         <div className="oompaImage">
@@ -14,18 +17,16 @@ const BodyDetail = ({image, name,lastName, gender,profession, description}) =>{
             <div className="name">
               {name} {lastName}
             </div>
-            <div className="gender">
-              {gender === "F" ? "Female" : "Man"}
-            </div>
+            <div className="gender">{gender === "F" ? "Female" : "Man"}</div>
             <div className="profession">{profession}</div>
           </div>
 
-    {description && description.replace(/(<([^>]+)>)/gi, "")}
+          {description && description.replace(/(<([^>]+)>)/gi, "")}
           <br />
         </div>
       </div>
     </div>
-    )
-}
+  );
+};
 
-export default BodyDetail
+export default BodyDetail;
