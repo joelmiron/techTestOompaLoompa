@@ -7,9 +7,9 @@ let customApi = ""
   const [oompas, setOompas] = useState(type === "all" ? JSON.parse( localStorage.getItem("allstoragedOompaLoompas")) || [] :
                               JSON.parse( localStorage.getItem(type + "storagedOompaLoompa")) || []);
   const [oompasToFilter, setOompasToFilter] = useState(JSON.parse( localStorage.getItem("allstoragedOompaLoompas")) || []);
-  const [idPage, setIdPage] = useState(JSON.parse( localStorage.getItem("actualPage")) ? JSON.parse( localStorage.getItem("actualPage")) : 1)
+  const [idPage, setIdPage] = useState(JSON.parse( localStorage.getItem("nextPage")) ? JSON.parse( localStorage.getItem("nextPage")) : 1)
   const [hasMorePages, setHasMorePages] = useState(hasMore)
-  let{actualDateStorage,refreshingDateStorage,actualPage,actualDate,clearDate} = getStoragedContent()
+  let{actualDateStorage,refreshingDateStorage,nextPage,actualDate,clearDate} = getStoragedContent()
 
 
   useEffect(() => {
@@ -33,13 +33,13 @@ let customApi = ""
 
 
   const getOompas = async () => {
-     customApi = api + actualPage
+     customApi = api + nextPage
     const response = await getContent(customApi);
 
     if (idPage < response.data.total + 1 && type === "all" && hasMorePages) {
-       localStorage.setItem("actualPage", JSON.stringify(response.data.current + 1));
+       localStorage.setItem("nextPage", JSON.stringify(response.data.current + 1));
       setHasMorePages(response.data.current < response.data.total)
-      setIdPage((actualPage) => actualPage + 1)
+      setIdPage((nextPage) => nextPage + 1)
       setOompas((prevOompas) => prevOompas.concat(response.data.results));
       setOompasToFilter((oompas) => oompas.concat(response.data.results));
       removeDates(type)

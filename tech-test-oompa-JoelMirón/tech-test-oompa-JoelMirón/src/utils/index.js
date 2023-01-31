@@ -20,15 +20,15 @@ export const setDates = (type, actualDate, clearDate) => {
 export const removeLocalStorageItems = (type) => {
   localStorage.removeItem(type + "storagedOompaLoompa");
   localStorage.removeItem("allstoragedOompaLoompas");
-  localStorage.removeItem("actualPage");
+  localStorage.removeItem("nextPage");
 };
 
 
 export const getStoragedContent = (type) =>{
     let actualDateStorage = JSON.parse(window.localStorage.getItem(type + "actualDate"));
     let refreshingDateStorage = JSON.parse(window.localStorage.getItem(type + "clearDate"));
-    let actualPage = JSON.parse(window.localStorage.getItem("actualPage")) ? JSON.parse(window.localStorage.getItem("actualPage")) : 1;
+    let nextPage = JSON.parse(window.localStorage.getItem("nextPage")) ? JSON.parse(window.localStorage.getItem("nextPage")) : 1;
     let actualDate = moment().format("LLL");
     let clearDate = moment().add(1, "day").format("LLL");
-    return{actualDateStorage,refreshingDateStorage,actualPage,actualDate,clearDate}
+    return{actualDateStorage,refreshingDateStorage,nextPage,actualDate,clearDate}
 }
