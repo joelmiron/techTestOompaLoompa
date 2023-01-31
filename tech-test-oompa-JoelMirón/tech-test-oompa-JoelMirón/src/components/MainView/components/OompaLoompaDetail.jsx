@@ -1,7 +1,7 @@
-import { API } from "api";
 import { useGetOompas } from "hooks/useGetOompas";
 import { useParams } from "react-router";
 import { useEffect, useState } from "react/cjs/react.development";
+import { API } from "constants/constants";
 import BodyDetail from "./BodyDetail";
 
 export const OompaLoompaDetail = () => {

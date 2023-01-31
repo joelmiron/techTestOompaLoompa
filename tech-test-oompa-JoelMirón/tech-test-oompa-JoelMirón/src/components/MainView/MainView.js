@@ -3,7 +3,7 @@ import { Suspense } from "react";
 import { useGetOompas } from "hooks/useGetOompas";
 import React, { useRef, useState } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { API } from "api";
+import { API } from "constants/constants";
 const OompaLoompaMain = React.lazy(() =>import("./components/OompaLoompaMain"));
 
 const MainView = () => {
