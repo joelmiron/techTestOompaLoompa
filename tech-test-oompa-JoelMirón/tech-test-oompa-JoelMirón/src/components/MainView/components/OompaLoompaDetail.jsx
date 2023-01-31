@@ -9,8 +9,7 @@ export const OompaLoompaDetail = () => {
   const type = id;
   const api = API + "/";
   let [oompa] = useGetOompas(type, api);
-  const [storagedOompaLoompa, setStoragedOompaLoompa] = useState(
-    JSON.parse(window.localStorage.getItem(id + "storagedOompaLoompa")) || []
+  const [storagedOompaLoompa, setStoragedOompaLoompa] = useState(JSON.parse(  localStorage.getItem(id + "storagedOompaLoompa")) || []
   );
 
   useEffect(() => {
@@ -22,9 +21,7 @@ export const OompaLoompaDetail = () => {
     if (Object.keys(storagedOompaLoompa).length === 0) {
       setStoragedOompaLoompa(oompa);
     }
-    window.localStorage.setItem(
-      id + "storagedOompaLoompa",
-      JSON.stringify(oompa)
+      localStorage.setItem(id + "storagedOompaLoompa",JSON.stringify(oompa)
     );
   };
 
