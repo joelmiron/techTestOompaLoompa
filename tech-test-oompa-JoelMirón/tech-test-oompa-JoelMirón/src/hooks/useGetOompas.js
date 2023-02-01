@@ -9,7 +9,7 @@ export const useGetOompas = (type, api, hasMore, page) => {
   const [oompasToFilter, setOompasToFilter] = useState(JSON.parse( localStorage.getItem("allstoragedOompaLoompas")) || []);
   const [idPage, setIdPage] = useState(JSON.parse( localStorage.getItem("nextPage")) ? JSON.parse( localStorage.getItem("nextPage")) : 1)
   const [hasMorePages, setHasMorePages] = useState(hasMore)
-  let{actualDateStorage,refreshingDateStorage,nextPage,actualDate,clearDate} = getStoragedContent()
+  let [actualDateStorage,refreshingDateStorage,nextPage,actualDate,clearDate] = getStoragedContent(type)
 
   useEffect(() => {
     getSingleOompa();
@@ -17,6 +17,7 @@ export const useGetOompas = (type, api, hasMore, page) => {
   }, [type]);
 
   useEffect(() => {
+   
     getOompas();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page])

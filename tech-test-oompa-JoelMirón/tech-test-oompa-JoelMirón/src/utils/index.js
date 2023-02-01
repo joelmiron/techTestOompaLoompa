@@ -30,5 +30,5 @@ export const getStoragedContent = (type) =>{
     let nextPage = JSON.parse(window.localStorage.getItem("nextPage")) ? JSON.parse(window.localStorage.getItem("nextPage")) : 1;
     let actualDate = moment().format("LLL");
     let clearDate = moment().add(1, "day").format("LLL");
-    return{actualDateStorage,refreshingDateStorage,nextPage,actualDate,clearDate}
+    return [actualDateStorage,refreshingDateStorage,nextPage,actualDate,clearDate]
 }
