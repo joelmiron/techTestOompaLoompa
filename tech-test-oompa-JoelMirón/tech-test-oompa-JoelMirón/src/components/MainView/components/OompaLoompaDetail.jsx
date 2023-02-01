@@ -21,8 +21,7 @@ export const OompaLoompaDetail = () => {
     if (Object.keys(storagedOompaLoompa).length === 0) {
       setStoragedOompaLoompa(oompa);
     }
-      localStorage.setItem(id + "storagedOompaLoompa",JSON.stringify(oompa)
-    );
+   
   };
 
   return (

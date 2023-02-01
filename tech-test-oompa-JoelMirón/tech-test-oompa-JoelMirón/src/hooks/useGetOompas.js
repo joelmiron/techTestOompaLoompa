@@ -56,6 +56,7 @@ export const useGetOompas = (type, api, hasMore, page) => {
       const response = await getContent(customApi)
       setOompas(response.data);
       setDates(type,actualDate,clearDate)
+      localStorage.setItem(type + "storagedOompaLoompa",JSON.stringify(response.data));
     }
   }
 
